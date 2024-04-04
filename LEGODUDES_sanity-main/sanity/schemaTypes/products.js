@@ -37,8 +37,8 @@ export const products ={
             title: "Lager",
             name: "stock",
             type: "number"
-            
+
         }
 
     ]
-}
+} 
