@@ -38,6 +38,11 @@ export const products ={
             name: "stock",
             type: "number"
 
+        },
+        {
+            title: "Anmeldelser",
+            name: "reviews",
+            type: "array",
         }
 
     ]

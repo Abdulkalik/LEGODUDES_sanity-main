@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { fetchAllProducts } from "../../sanity/services/productservices"
 import ProductCard from "./ProductCard"
+import { fetchAllProducts } from "../../sanity/services/productservices"
 
 export default function Home({setAmount, cart, setCart}){
     const [products, setProducts] = useState(null)
