@@ -1,10 +1,10 @@
-export const products ={
+export const products = {
     title: "Produkter",
-    name: "products",
+    name: "products", 
     type: "document",
     fields: [
         {
-            title : "Produktnavn",
+            title: "Produktnavn",
             name: "productname",
             type: "string"
         },
@@ -12,38 +12,42 @@ export const products ={
             title: "Produktlink",
             name: "producturl",
             type: "slug",
-            options:{
+            options: {
                 source: "productname",
-                slugify: input => input.toLowerCase().replace (/\s+/g, '-')
+                slugify: input => input.toLowerCase().replace(/\s+/g, '-')
             }
+        },
+        {
+            title: "Beskrivelse",
+            name: "description",
+            type: "text"
         },
         {
             title: "Pris",
             name: "price",
-            type:"number"
+            type: "number"
         },
         {
-            title:"Produktbilde",
+            title: "Produktbilde",
             name: "productimage",
             type: "image"
         },
         {
-            title:"Kategori",
-            name:"category",
-            type:"reference",
+            title: "Kategori",
+            name: "category",
+            type: "reference",
             to: [{type: "categories"}]
         },
         {
             title: "Lager",
             name: "stock",
             type: "number"
-
         },
         {
             title: "Anmeldelser",
             name: "reviews",
             type: "array",
+            of: [{type: "reviews"}]
         }
-
     ]
-} 
+}

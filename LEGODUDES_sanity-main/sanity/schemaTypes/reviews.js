@@ -4,17 +4,17 @@ export const reviews = {
     type: "object",
     fields: [
         {
-            title : "Navn", 
-            name : "reviewer",
-            type : "string"
+            title: "Navn",
+            name: "reviewer",
+            type: "string"
         },
         {
-            title : "Vurdering",
+            title: "Vurdering",
             name: "rating",
-            type : "number"
+            type: "number"
         },
         {
-            title : "Kommentar",
+            title: "Kommentar",
             name: "comment",
             type: "text"
         }
