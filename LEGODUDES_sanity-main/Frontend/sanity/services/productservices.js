@@ -19,6 +19,7 @@ export async function fetchAllProducts() {
 //Funksjon som henter et produkt basert på en slug:
 export async function fetchProductBySlug(slug) {
     const data = await client.fetch(`*[_type == "products" && producturl.current == $slug]{
+        _id,
         productname,
         description,
         "categoryname": category->categorytitle,
@@ -31,9 +32,12 @@ export async function fetchProductBySlug(slug) {
     return data
 }
 export async function updateReview(productid, reviewer, comment, rating){
-    const result = await writeClient.patch(productid).selfMissing({"reviews": []})
+    const result = await writeClient
+    .patch(productid).setIfMissing({reviews: []})
     .append("reviews", [{reviewer: reviewer, comment: comment, rating: rating}])
     .commit({autoGenerateArrayKeys: true})
     .then(()=> {return "success"})
     .catch((error) => {return "Error: " + error.message})
+
+    return result
 }
